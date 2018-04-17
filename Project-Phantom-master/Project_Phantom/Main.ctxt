@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Main()
+comment1.params=
+comment1.target=int\ getMenuAns()
+comment2.params=
+comment2.target=void\ menuAns()
+comment3.params=
+comment3.target=boolean\ getStats()
+comment4.params=
+comment4.target=void\ rollStats()
+comment5.params=
+comment5.target=void\ clear()
+numComments=6
