@@ -1,12 +1,16 @@
-
+import java.util.*;
 /**
  * Write a description of class Stats here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Stats extends Main
+public class Stats //extends Main
 {
+    private Random rand;
+    
+    private int rNum;
+    
     private int myTact;
     private int myPrec;
     private int mySurv;
@@ -14,6 +18,8 @@ public class Stats extends Main
     private int myReso;
     public Stats()
     {
+        rand = new Random();
+        
         myTact = 0;
         myPrec = 0;
         mySurv = 0;
@@ -21,24 +27,60 @@ public class Stats extends Main
         myReso = 0;
     }
     
-    public int setTact()
+    public void setTact()
     {
-        
+        myTact = getRand();
     }
-    public int setPrec()
+    
+    public int getTact()
     {
-        
+        return myTact;
     }
-    public int setSurv()
+    
+    public void setPrec()
     {
-        
+        myPrec = getRand();
     }
-    public int setStea()
+    
+    public int getPrec()
     {
-        
+        return myPrec;
     }
-    public int setReso()
+    
+    public void setSurv()
     {
+        mySurv = getRand();
+    }
+    
+    public int getSurv()
+    {
+        return mySurv;
+    }
+    
+    public void setStea()
+    {
+        myStea = getRand();
+    }
+    
+    public int getStea()
+    {
+        return myStea;
+    }
+    
+    public void setReso()
+    {
+        myReso = getRand();
+    }
+    
+    public int getReso()
+    {
+        return myReso;
+    }
+    
+    private int getRand()
+    {
+        rNum = rand.nextInt(10) + 1;
         
+        return rNum;
     }
 }
