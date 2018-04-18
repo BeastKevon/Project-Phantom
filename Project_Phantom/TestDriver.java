@@ -11,7 +11,8 @@ public class TestDriver
     {
         Main main = new Main();
         
-        main.getMenuAns();
-        main.getStats();
+        main.runMenu();
+        main.runStats();
+        main.runGame();
     }
 }

@@ -10,13 +10,15 @@ public class Main
 {
     //Defining objects
     private Scanner user;
-    private Clear cls;
     private Stats stats;
+    private Menu menu;
+    private Game game;
 
     //Instance Variables
+    //Class Menu Variables
     private int menuAns;
 
-    //Stat Variables
+    //Class Stat Variables
     protected int tact;
     protected int prec;
     protected int surv;
@@ -26,8 +28,9 @@ public class Main
     public Main()
     {
         user = new Scanner(System.in);
-        cls = new Clear();
         stats = new Stats();
+        menu = new Menu();
+        game = new Game();
 
         tact = 0;
         prec = 0;
@@ -38,78 +41,26 @@ public class Main
         menuAns = 0;
     }//end method
 
-    public int getMenuAns()
+    public void runMenu()
     {
-        menuAns();
-        return menuAns;
+        menuAns = menu.getMenuAns();
     }//end method
 
-    private void menuAns()
+    public void runStats()
     {
-        while(true)
-        {
-            System.out.println("1. Start Solo Game");
-            System.out.print("Menu Answer: ");
-            menuAns = user.nextInt();
-
-            if(menuAns == 1)
-            {
-                break;
-            }//end if
-            else
-            {
-                clear();
-            }//end else
-        }//end while
-    }//end method
-
-    public boolean getStats()
-    {
-        rollStats();
-
-        return true;
-    }
-
-    private void rollStats()
-    {
-        stats.setTact();
-        stats.setPrec();
-        stats.setSurv();
-        stats.setStea();
-        stats.setReso();
-
+        stats.rollStats();
+        
         tact = stats.getTact();
         prec = stats.getPrec();
         surv = stats.getSurv();
         stea = stats.getStea();
         reso = stats.getReso();
         
-        clear();
-
-        System.out.println(tact);
-        System.out.println(prec);
-        System.out.println(surv);
-        System.out.println(stea);
-        System.out.println(reso);
+        stats.displayStats();
     }
-
-    private void clear()
+    
+    public void runGame()
     {
         
-        try 
-        {
-            try
-            {
-                cls.clear();
-            }//end try
-            catch (IOException e)
-            {
-                System.out.println(e);
-            }//end catch
-        }//end try
-        catch (InterruptedException e) 
-        {
-            System.out.println(e);
-        }//end catch
     }
 }//end class

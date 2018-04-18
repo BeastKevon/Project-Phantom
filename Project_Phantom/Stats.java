@@ -27,9 +27,23 @@ public class Stats //extends Main
         myReso = 0;
     }
     
-    public void setTact()
+    public void rollStats()
+    {
+        setTact();
+        setPrec();
+        setSurv();
+        setStea();
+        setReso();
+    }
+    
+    private void setTact()
     {
         myTact = getRand();
+    }
+    
+    private void setPrec()
+    {
+        myPrec = getRand();
     }
     
     public int getTact()
@@ -37,9 +51,19 @@ public class Stats //extends Main
         return myTact;
     }
     
-    public void setPrec()
+    private void setSurv()
     {
-        myPrec = getRand();
+        mySurv = getRand();
+    }
+    
+    private void setStea()
+    {
+        myStea = getRand();
+    }
+    
+    private void setReso()
+    {
+        myReso = getRand();
     }
     
     public int getPrec()
@@ -47,29 +71,14 @@ public class Stats //extends Main
         return myPrec;
     }
     
-    public void setSurv()
-    {
-        mySurv = getRand();
-    }
-    
     public int getSurv()
     {
         return mySurv;
     }
     
-    public void setStea()
-    {
-        myStea = getRand();
-    }
-    
     public int getStea()
     {
         return myStea;
-    }
-    
-    public void setReso()
-    {
-        myReso = getRand();
     }
     
     public int getReso()
@@ -82,5 +91,10 @@ public class Stats //extends Main
         rNum = rand.nextInt(10) + 1;
         
         return rNum;
+    }
+    
+    public void displayStats()
+    {
+        
     }
 }
